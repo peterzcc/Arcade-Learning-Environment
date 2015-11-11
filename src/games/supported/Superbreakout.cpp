@@ -53,9 +53,13 @@ life 0xE1
 void SuperbreakoutSettings::step(const System& system) {
 
     // update the reward
-    reward_t score = getDecimalScore(0xDD, 0xDC, &system);
-    m_reward = score - m_score;
-    m_score = score;
+    m_reward = 0
+    if readRam(&system,0xE0) == 0 {
+      reward_t score = getDecimalScore(0xDD, 0xDC, &system);
+      m_reward = score - m_score;
+      m_score = score;
+    }
+
     // update terminal status
     m_terminal = readRam(&system, 0xF9) != 0xFF;
 
