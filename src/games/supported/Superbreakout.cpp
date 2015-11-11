@@ -57,7 +57,7 @@ void SuperbreakoutSettings::step(const System& system) {
     m_reward = score - m_score;
     m_score = score;
     // update terminal status
-    m_terminal = readRam(&system, 0xF9) == 0xF7;
+    m_terminal = readRam(&system, 0xF9) != 0xFF;
 
     m_lives = 6 - readRam(&system, 0xE1) - (m_terminal);
 }
@@ -83,8 +83,8 @@ bool SuperbreakoutSettings::isMinimal(const Action &a) const {
     switch (a) {
         case PLAYER_A_NOOP:
         case PLAYER_A_FIRE:
+        case PLAYER_A_RIGHT:
         case PLAYER_A_LEFT:
-        case PLAYER_A_DOWN:
             return true;
         default:
             return false;
