@@ -77,6 +77,12 @@
 #include "supported/YarsRevenge.hpp"
 #include "supported/Zaxxon.hpp"
 #include "supported/Superbreakout.hpp"
+#include "supported/Cokewins.hpp"
+#include "supported/Condor.hpp"
+#include "supported/Deadduck.hpp"
+#include "supported/Galaxian.hpp"
+#include "supported/Galaxnew.hpp"
+#include "supported/Spachase.hpp"
 
 /* list of supported games */
 static const RomSettings *roms[]  = {
@@ -143,6 +149,12 @@ static const RomSettings *roms[]  = {
     new YarsRevengeSettings(),
     new ZaxxonSettings(),
     new SuperbreakoutSettings(),
+    new CokewinsSettings(),
+    new CondorSettings(),
+    new DeadduckSettings(),
+    new GalaxianSettings(),
+    new GalaxnewSettings(),
+    new SpachaseSettings(),
 };
 
 
